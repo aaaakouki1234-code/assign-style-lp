@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 64px;
+}
+
+body {
+  background-color: #fbfaf7;
+  color: #0c1b33;
+  font-feature-settings: "palt";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-page px-5 sm:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-b from-gold to-gold-deep px-8 py-4 text-base font-bold text-navy-900 shadow-cta transition hover:-translate-y-0.5 hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold sm:w-auto;
+  }
+
+  .btn-nav {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold px-5 py-2.5 text-sm font-bold text-navy-900 transition hover:brightness-105;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-bold tracking-[0.22em] text-gold-deep;
+  }
+
+  .heading {
+    @apply font-serif text-2xl font-bold leading-tight tracking-tight text-navy-900 sm:text-3xl lg:text-[2.4rem];
+  }
+}
+
+.bg-grid {
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(197, 165, 114, 0.14), transparent 42%),
+    radial-gradient(circle at 85% 0%, rgba(94, 115, 160, 0.18), transparent 45%);
+}
+
+.gold-line {
+  background: linear-gradient(90deg, transparent, #c5a572, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-fadeUp,
+  .animate-shimmer {
+    animation: none;
+  }
+}
